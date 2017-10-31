@@ -142,7 +142,13 @@ async def play(args):
     main_queue.append(result)
     print("Appended")
     info = await get_vid_info(result)
-    await bot.say("Added " + info['title'])
+    desc = "Added by " + args.message.author.name
+    embed = discord.Embed(title=info['title'], type="rich", description=desc, color=discord.Colour.green())
+    img = info['thumb']
+    embed.set_image(url=img)
+    footer = str("{:,}".format(info['views'])) + " views"
+    embed.set_footer(text=footer)
+    await bot.send_message(bot.get_channel('335059366208208926'), embed=embed, tts=False)
 
 
 '''
@@ -370,6 +376,8 @@ async def get_vid_info(url):
     info['title'] = video.title
     info['author'] = video.author
     info['date'] = video.published
+    info['thumb'] = video.thumb
+    info['views'] = video.viewcount
     return info
 
 

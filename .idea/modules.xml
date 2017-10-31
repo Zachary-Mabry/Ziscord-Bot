@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Ziscord-Bot.iml" filepath="$PROJECT_DIR$/.idea/Ziscord-Bot.iml" />
       <module fileurl="file://$PROJECT_DIR$/../bot-main/.idea/discordbot.iml" filepath="$PROJECT_DIR$/../bot-main/.idea/discordbot.iml" />
     </modules>
   </component>
